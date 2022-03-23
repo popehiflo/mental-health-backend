@@ -1,8 +1,12 @@
 // import express from 'express';
 const express = require('express');
+const { dbConnection } = require('./database/config');
 
 // Crear el servidor de express
 const app = express();
+
+// Base de datos
+dbConnection();
 
 // Rutas
 app.get( '/', (req, res) => {
