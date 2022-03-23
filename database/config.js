@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 
 const dbConnection = async () => {
   try {
-    await mongoose.connect("mongodb+srv://<user>:<password>@cluster0.6by7g.mongodb.net/mhdb");
-    console.log('db On Fire!');
+    await mongoose.connect(process.env.DB_CONNECTION);
+    console.log('SUCCESSFUL! Conexion exitosa a la Base de Datos');
   } catch (error) {
     console.log(error);
-    throw new Error('Error a la hora de iniciar la db!');
+    throw new Error('FAILED! Conexion fallida a la Base de Datos');
   }
 };
 
